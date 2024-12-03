@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(20, 30px); /* 20 columns */
+    grid-template-rows: repeat(15, 30px);    /* 15 rows */
+    gap: 0;
+}
+
+.grid-cell {
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border: 1px solid white; 
+    opacity: 1; 
+    transition: background-color 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+
+@keyframes colorFall {
+    0% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+
+
+.grid-cell.falling {
+    animation: colorFall 1s forwards; 
+}
